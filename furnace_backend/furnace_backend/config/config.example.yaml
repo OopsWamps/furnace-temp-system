@@ -1,0 +1,39 @@
+server:
+  host: "0.0.0.0"
+  port: 8080
+  debug: true
+
+database:
+  # 复制本文件为 config.yaml 并填入实际密码
+  url: "postgresql+asyncpg://postgres:your_password@127.0.0.1:5432/furnace"
+  echo: false
+  pool_size: 10
+  max_overflow: 20
+
+external_services:
+  realtime:
+    base_url: "http://localhost:8000"
+    timeout: 30.0
+  history:
+    base_url: "http://localhost:8001"
+    timeout: 30.0
+
+model:
+  heating_model_path: "heating_bilstm.pth"
+  heating_feat_scaler_path: "heating_feat_scaler.pkl"
+  heating_target_scaler_path: "heating_target_scaler.pkl"
+  cooling_model_path: "cooling_bilstm.pth"
+  cooling_feat_scaler_path: "cooling_feat_scaler.pkl"
+  cooling_target_scaler_path: "cooling_target_scaler.pkl"
+  holding_model_path: "holding_bilstm.pth"
+  holding_feat_scaler_path: "holding_feat_scaler.pkl"
+  holding_target_scaler_path: "holding_target_scaler.pkl"
+
+alarm:
+  core_temp_threshold: 810.0
+
+logging:
+  level: "INFO"
+  file_path: "logs/app.log"
+  rotation: "10 MB"
+  retention: "7 days"

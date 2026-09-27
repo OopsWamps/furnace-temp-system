@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+dist/
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Node
+node_modules/
+dist-ssr/
+kangc.npm-cache/
+*.local
+
+# 日志
+logs/
+*.log
+
+# 敏感配置(含数据库密码,提供 config.example.yaml 模板)
+furnace_backend/furnace_backend/config/config.yaml
+
+# 模型文件重新包含(子 .gitignore 排除了 *.pth/*.pkl,约 3MB,直接上传保证开箱即用)
+!*.pth
+!*.pkl
+
+# 本地文档与资料(不入库)
+*.docx
+~$*
+项目运行图片/
+.claude/
+
+# 系统与编辑器
+.DS_Store
+.idea/
+.vscode/
+*.sw?
+Thumbs.db
